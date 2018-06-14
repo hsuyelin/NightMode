@@ -12,7 +12,7 @@ class SecondViewController: UIViewController {
 	@IBOutlet private var titleLabel: UILabel!
 	@IBOutlet private var subtitleLabel: UILabel!
 
-	override func viewDidLoad() {
+    override func viewDidLoad() {
 		super.viewDidLoad()
 		setUpTheming()
 	}
@@ -20,12 +20,13 @@ class SecondViewController: UIViewController {
 	@IBAction func toggleThemeActionTriggered() {
 		themeProvider.nextTheme()
 	}
+    
 }
 
 extension SecondViewController: Themed {
 	func applyTheme(_ theme: AppTheme) {
-		view.backgroundColor = theme.backgroundColor
-		titleLabel.textColor = theme.textColor
-		subtitleLabel.textColor = theme.textColor
+        view.backgroundColor = theme.backgroundColor
+        titleLabel.textColor = theme.textColor
+        subtitleLabel.textColor = theme.textColor
 	}
 }

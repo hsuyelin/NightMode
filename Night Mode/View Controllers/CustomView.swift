@@ -47,5 +47,8 @@ extension CustomView: Themed {
         self.backgroundColor = theme.backgroundColor
         titleLabel.textColor = theme.textColor
         subTitleLabel.textColor = theme.textColor
+        
+        let flag = AppThemeProvider().isNight() == true ? "夜间模式" : "日间模式"
+        print("biu biu biu 切换到了" + flag)
     }
 }

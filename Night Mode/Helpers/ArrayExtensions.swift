@@ -18,4 +18,19 @@ extension Array {
 		insert(lastElement, at: 0)
 		return lastElement
 	}
+    
+    func nextElement(_ currentIndex: Index) -> Element? {
+        if currentIndex == self.count - 1 {
+            guard let nextElement = self.first else {
+                return nil
+            }
+            return nextElement
+        }
+        else {
+            if self.count > currentIndex + 1 {
+                return self[currentIndex + 1]
+            }
+            return nil
+        }
+    }
 }

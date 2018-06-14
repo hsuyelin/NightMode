@@ -8,11 +8,13 @@
 
 import UIKit
 
+public let AppThemeIdPreferencesFlag = "AppThemeIdPreferencesFlag"
+
 final class AppThemeProvider: ThemeProvider {
 	static let shared: AppThemeProvider = .init()
 
 	private var theme: SubscribableValue<AppTheme>
-	private var availableThemes: [AppTheme] = [.light, .dark]
+    var availableThemes: [AppTheme] = [.light, .dark]
 
 	var currentTheme: AppTheme {
 		get {
@@ -24,21 +26,17 @@ final class AppThemeProvider: ThemeProvider {
 	}
 
 	init() {
-		theme = SubscribableValue<AppTheme>(value: .light)
+        theme = SubscribableValue<AppTheme>(value: AppThemeUtils.getCurrentTheme(availableThemes))
 	}
 
 	private func setNewTheme(_ newTheme: AppTheme) {
         if self.theme.value == newTheme { return }
+        AppThemeUtils.saveThemeId(newTheme.themeId)
 		let window = UIApplication.shared.delegate!.window!!
-		UIView.transition(
-			with: window,
-			duration: 0.3,
-			options: [.transitionCrossDissolve],
-			animations: {
-				self.theme.value = newTheme
-			},
-			completion: nil
-		)
+        UIView.transition(with: window, duration: 0.3, options: [ .transitionCrossDissolve ], animations: {
+            self.theme.value = newTheme
+        }) { (completion) in
+        }
 	}
 
 	func subscribeToChanges(_ object: AnyObject, handler: @escaping (AppTheme) -> Void) {
@@ -46,11 +44,15 @@ final class AppThemeProvider: ThemeProvider {
 	}
 
 	func nextTheme() {
-		guard let nextTheme = availableThemes.rotate() else {
-			return
-		}
+        guard let nextTheme = availableThemes.nextElement(AppThemeUtils.readCurrentIndex()) else {
+            return
+        }
 		currentTheme = nextTheme
 	}
+    
+    func isNight() -> Bool {
+        return currentTheme == .dark
+    }
 }
 
 extension Themed where Self: AnyObject {

@@ -10,6 +10,7 @@ import UIKit
 
 struct AppTheme {
     var themeName: String
+    var themeId: String
 	var statusBarStyle: UIStatusBarStyle
 	var barBackgroundColor: UIColor
 	var barForegroundColor: UIColor
@@ -20,6 +21,7 @@ struct AppTheme {
 extension AppTheme {
 	static let light = AppTheme(
         themeName: "light",
+        themeId: "0",
 		statusBarStyle: .`default`,
 		barBackgroundColor: .white,
 		barForegroundColor: .black,
@@ -29,6 +31,7 @@ extension AppTheme {
 
     static let dark = AppTheme(
         themeName: "dark",
+        themeId: "1",
         statusBarStyle: .lightContent,
         barBackgroundColor: UIColor(white: 0, alpha: 1),
         barForegroundColor: .white,

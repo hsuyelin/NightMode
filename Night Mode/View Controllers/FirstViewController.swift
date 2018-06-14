@@ -27,6 +27,7 @@ class FirstViewController: UIViewController {
 	@IBAction func toggleThemeActionTriggered() {
 		themeProvider.nextTheme()
 	}
+    
 }
 
 extension FirstViewController: Themed {

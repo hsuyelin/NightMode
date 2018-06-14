@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		257C321420D102660062D05F /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C321320D102660062D05F /* CustomView.swift */; };
+		25E0902120D273B40066C9E8 /* AppThemeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E0902020D273B40066C9E8 /* AppThemeUtils.swift */; };
+		25E0902320D273BD0066C9E8 /* AppThemeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E0902220D273BD0066C9E8 /* AppThemeExtension.swift */; };
 		4C240D7320716814006E2A03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C240D7220716814006E2A03 /* AppDelegate.swift */; };
 		4C240D7520716814006E2A03 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C240D7420716814006E2A03 /* FirstViewController.swift */; };
 		4C240D7720716814006E2A03 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C240D7620716814006E2A03 /* SecondViewController.swift */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		257C321320D102660062D05F /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		25E0902020D273B40066C9E8 /* AppThemeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppThemeUtils.swift; sourceTree = "<group>"; };
+		25E0902220D273BD0066C9E8 /* AppThemeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppThemeExtension.swift; sourceTree = "<group>"; };
 		4C240D6F20716814006E2A03 /* Night Mode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Night Mode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C240D7220716814006E2A03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C240D7420716814006E2A03 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				4C240D87207168BA006E2A03 /* Theming.swift */,
 				4C240D8C20716A45006E2A03 /* AppTheme.swift */,
 				4C240D8E20716A63006E2A03 /* AppThemeProvider.swift */,
+				25E0902220D273BD0066C9E8 /* AppThemeExtension.swift */,
+				25E0902020D273B40066C9E8 /* AppThemeUtils.swift */,
 			);
 			path = Theming;
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C240D8F20716A63006E2A03 /* AppThemeProvider.swift in Sources */,
+				25E0902120D273B40066C9E8 /* AppThemeUtils.swift in Sources */,
 				4C240D9520717944006E2A03 /* ArrayExtensions.swift in Sources */,
 				4C240D7720716814006E2A03 /* SecondViewController.swift in Sources */,
 				4C240D88207168BA006E2A03 /* Theming.swift in Sources */,
@@ -210,6 +217,7 @@
 				257C321420D102660062D05F /* CustomView.swift in Sources */,
 				4C240D8B20716A08006E2A03 /* SubscribableValue.swift in Sources */,
 				4C240D7520716814006E2A03 /* FirstViewController.swift in Sources */,
+				25E0902320D273BD0066C9E8 /* AppThemeExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,9 +355,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QC2G2Y59YZ;
 				INFOPLIST_FILE = "Night Mode/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.latenightswift.Night-Mode";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hsuyelin.appTheme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -361,9 +371,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QC2G2Y59YZ;
 				INFOPLIST_FILE = "Night Mode/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.latenightswift.Night-Mode";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hsuyelin.appTheme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
